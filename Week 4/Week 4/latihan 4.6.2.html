@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <Title>Kalkulator Sederhana</Title>
+</head>
+<script language="JavaScript">
+    function test(hitung) {
+        var angka1 = parseInt(document.getElementById('bil1').value);
+        var angka2 = parseInt(document.getElementById('bil2').value);
+
+        if (hitung == "+") {
+            document.getElementById('hasil').value = angka1 + angka2;
+        } else if (hitung == "-") {
+            document.getElementById('hasil').value = angka1 - angka2;
+        } else if (hitung == "x") {
+            document.getElementById('hasil').value = angka1 * angka2;
+        } else if (hitung == "/") {
+            document.getElementById('hasil').value = angka1 / angka2;
+        }
+    }
+    function resetForm() {
+        document.calculator.reset();
+    }        
+</script>
+
+
+<body>
+    <form method="post" name="calculator">
+        <p>Bilangan 1 : <input type="text" id="bil1" size="10"></p>
+        <p>Bilangan 2 : <input type="text" id="bil2" size="10"></p>
+        <p>Hasil : <input type="text" id="hasil" size="10" disabled="true"></p>
+        Operasi
+        <input class="tombol" type="button" onclick="test(this.value)" value="+";>
+        <input class="tombol" type="button" onclick="test(this.value)" value="-";>
+        <input class="tombol" type="button" onclick="test(this.value)" value="x";>
+        <input class="tombol" type="button" onclick="test(this.value)" value="/";>
+        <br><br><input type="button" value="HAPUS" onClick="resetForm()" />
+        <br><br>
+        <script language="JavaScript">
+            document.write("Dimodifikasi terakhir pada " + document.lastModified);
+        </script>
+    </form>
+</body>
+
+</html>
